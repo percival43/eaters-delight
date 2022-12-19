@@ -6,6 +6,8 @@ import dash_bootstrap_components as dbc
 import dash
 from sqlalchemy import create_engine
 from datetime import date
+from user import USERNAME_PASSWORD_PAIRS
+import dash_auth
 
 cnx = create_engine("postgresql://aguoqrsawiamxj:e836be1bac3bd822f2664d2de84591d4054d21814491fa892095c8326e317479@ec2-52-7-228-45.compute-1.amazonaws.com:5432/d2hf22v709ttic")
 conn = cnx.connect()
@@ -28,6 +30,7 @@ fig = go.Figure(data=data,layout=layout)
 
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+auth = dash_auth.BasicAuth(app,USERNAME_PASSWORD_PAIRS)
 server = app.server
 app.layout = html.Div(children=[dbc.Row(dbc.NavbarSimple([
                                         html.A(
