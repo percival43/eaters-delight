@@ -27,6 +27,7 @@ fig = go.Figure(data=data)
 
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
 app.layout = html.Div(children=[dbc.Row(dbc.NavbarSimple([
                                         html.A(
                                             dbc.Row(
