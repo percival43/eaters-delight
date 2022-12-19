@@ -5,3 +5,5 @@ plotly==5.11.0
 SQLAlchemy==1.4.45
 gunicorn
 psycopg2
+dash-auth
+from user import USERNAME_PASSWORD_PAIRS
