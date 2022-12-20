@@ -25,7 +25,7 @@ cnx.dispose()
 data = [go.Table(header=dict(values=["მომხმარებლის ID",'GMV (ევროში)','შეკვეთების რაოდენობა'],
                              fill_color='rgb(52,209,134)'),
                  cells=dict(values=[df['user_id'],df['gmv'].round(decimals=0),df['count']]))]
-layout = go.Layout(title="TOP ითერები👌🤩😩")
+layout = go.Layout(title="TOP ითერები👌🤩😩:")
 fig = go.Figure(data=data,layout=layout)
 
 
@@ -81,7 +81,7 @@ def update_graph(start_date,end_date):
                                  fill_color='rgb(52,209,134)'
                                  ),
                  cells=dict(values=[df['user_id'],df['gmv'].round(decimals=0),df['count']]))]
-    layout = go.Layout(title="TOP ითერები👌🤩😩")
+    layout = go.Layout(title="TOP ითერები👌🤩😩:")
     fig = go.Figure(data=data,layout=layout)
     return fig
 
