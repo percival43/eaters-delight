@@ -14,6 +14,7 @@ conn = cnx.connect()
 query = f"""select uce.user_id, sum(uce.gmv) gmv, count(order_id) count from user_campaign_enrollment uce
              where uce.timeframe >= '2022-01-01'
              and uce.timeframe < '2022-12-31'
+             and uce.order_state = 'delivered'
              group by user_id
              order by 3 desc"""
 
@@ -68,6 +69,7 @@ def update_graph(start_date,end_date):
     query = f"""select uce.user_id, sum(uce.gmv) gmv, count(order_id) count from user_campaign_enrollment uce
              where uce.timeframe >= '{start_date}'
              and uce.timeframe < '{end_date}'
+             and uce.order_state = 'delivered'
              group by user_id
              order by 3 desc"""
 
